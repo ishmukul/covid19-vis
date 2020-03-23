@@ -7,8 +7,10 @@ https://github.com/CSSEGISandData/COVID-19
 
 # Data extraction for COVID-19 cases
 This script extracts data for confirmed cases, cases that resulted in deaths, and recovered cases for each country 
-and province, and writes data into a separate csv file. It also plots this data for visualization.  
-Further analysis pending.
+and province, and writes data into a separate csv file.   
+
+Visualization: Plots line plots for each country and province.  
+Pie charts: Plots pie chart for countries with Province data.  
 
 Directory structure:  
 Readme.md : This Readme file.  
@@ -16,4 +18,4 @@ covid19.py : Main python script for processing data.
 data: Folder with data from CSSE account.  
 csv_out: Folder with output csv files. Filename are Country_Province.csv  
 plots: generated plots from this script. Filename are Country_Province.csv  
-
+pie_chart: generated pie charts for countries with province/state data. Filename are Country.png

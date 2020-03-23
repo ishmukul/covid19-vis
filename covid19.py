@@ -1,3 +1,25 @@
+# # Time-series data for COVID-19 cases
+#
+# Time-series data downloaded from:
+# Novel Coronavirus (COVID-19) Cases, provided by John Hopkins University CSSE github account.
+# All details regarding data are provided in the link below.
+# https://github.com/CSSEGISandData/COVID-19
+#
+# # Data extraction for COVID-19 cases
+# This script extracts data for confirmed cases, cases that resulted in deaths, and recovered cases for each country
+# and province, and writes data into a separate csv file.
+#
+# Visualization: Plots line plots for each country and province.
+# Pie charts: Plots pie chart for confirmed cases for countries with Province data.
+#
+# Directory structure:
+# Readme.md : This Readme file.
+# covid19.py : Main python script for processing data.
+# data: Folder with data from CSSE account.
+# csv_out: Folder with output csv files. Filename are Country_Province.csv
+# plots: generated plots from this script. Filename are Country_Province.csv
+# pie_chart: generated pie charts for countries with province/state data. Filename are Country.png
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
@@ -7,17 +29,20 @@ plt.close('all')  # Close any existing plot
 Dpi = 150  # Pixel count for figures
 FlagFig = 1  # Flag for activating all figure flags
 if FlagFig == 0:
-    FlagFigWorld = FlagFigCountry = FlagFigProvince = 0  # Condition for not plotting any figure
+    FlagFigWorld = FlagFigCountry = FlagFigProvince = FlagPlotPie = 0  # Condition for not plotting any figure
 else:
     FlagFigCountry = 1  # flag for plotting Country
     FlagFigProvince = 1  # Flag for plotting Province
     FlagFigWorld = 1  # Flag for plotting World
+    FlagPlotPie = 1 # Flag for pie charts
 
 # Create plot directory, if it does not exist
 if not os.path.exists('./plots'):
     os.makedirs('./plots')
 if not os.path.exists('./csv_out'):
     os.makedirs('./csv_out')
+if not os.path.exists('./pie_chart'):
+    os.makedirs('./pie_chart')
 
 # Reading time series data. Data is in three separate files for confirmed cases, Cases that resulted in Deaths,
 # and cases that recovered
@@ -82,6 +107,12 @@ def get_province_data(data1, data2, data3, province_name, start_date_index):
 
 
 # ============================================
+# Extracting count from one dataseries
+def get_last_stat(data1, name):
+    return data1[data1['Country/Region'] == name].sum()[-1]
+
+
+# ============================================
 # Write data to csv files. One file will generated for each execution.
 # Format is: Rows=Cases; Columns=Date,Confirmed,Deaths,Recovered
 def write_data_csv(data1, data2, data3, name):
@@ -97,9 +128,10 @@ def write_data_csv(data1, data2, data3, name):
 
 # ============================================
 # Visualization: plotting all three cases in a single plot.
+# plot_fig(confirmed_data, death_data, Recovered_data, country/province_name, save_option)
 def plot_fig(data1, data2, data3, name, save_option):
     plt.figure(figsize=plt.figaspect(0.8), dpi=Dpi)
-    norm = 1000.0
+    norm = 1
     # Let's calculate number of days from 22 Jan 2020 (First date in this dataset) = len(data1)
     # It is assuming that dataset was updated everyday and it has record for each date.
     plt.plot(range(len(data1)), data1 / norm, '-k', Linewidth=3, label='Confirmed')
@@ -107,7 +139,8 @@ def plot_fig(data1, data2, data3, name, save_option):
     plt.plot(range(len(data3)), data3 / norm, '-g', Linewidth=3, label='Recovered')
     plt.xlim([0, len(data1) + 1])
     plt.xlabel('# of Days from %s' % DataConfirmed.columns[IndexDate])
-    plt.ylabel('# of Cases (in multiples of %dK)' % int(norm / 1000))
+    # plt.ylabel('# of Cases (in multiples of %dK)' % int(norm / 1000))
+    plt.ylabel('# of Cases')
     plt.title('# of COVID-19 cases in %s' % name)
     plt.legend(loc='best')
     if save_option == 1:
@@ -117,6 +150,43 @@ def plot_fig(data1, data2, data3, name, save_option):
 
         filename = name + '.png'
         plt.savefig("./plots/" + filename)  # FIle saving
+    plt.close()  # Had to use this in iPython. Number of graphs in memory exploded. Will search for some better method.
+    return 0
+
+
+# ============================================
+# Visualization: plotting Pie chart for a single country based on Provinces.
+# Following functions also filters data based on percentage threshold. In general, provinces with less cases are adding
+# to improper labelling. Values less than threshold are added to give a new label 'Others'.
+# We created a pandas dataframe from x_values and labels, sorted them and put a percentage threshold on data.
+# Final data is plotted as pie chart.
+# plot_pie_chart(cases, province_name, country_name, percentage_threshold, save_option)
+def plot_pie_chart(cases, label_name, name, pcon, save_option):
+
+    # Open a canvas with DotspPerInch Dpi.
+    plt.figure(figsize=plt.figaspect(0.8), dpi=Dpi)
+    xval = pd.Series(cases)  # x_values converted to Series
+    label = pd.Series(label_name)  # labels converted to Series
+    piedata = pd.concat([xval, label], axis=1)  # Pandas dataframe created
+    piedata.columns = ['Case', 'Province']  # dataframe headers
+    piedata = piedata.sort_values(by='Case', ascending=False).reset_index()  # Sorted data in descending order
+    pie_pc = 100 * (piedata['Case'] / (piedata['Case'].sum()))  # Created percentage data
+    ind = pie_pc[pie_pc > pcon].index[-1]  # 5 percent condition
+    xval = piedata['Case'][:ind + 1]  # x_values filtered for top high percentages
+    xval[ind + 1] = piedata['Case'][ind + 1:].sum().sum()  # Sum of remaining values added
+    label = piedata['Province'][:ind + 1]   # label value filtered
+    label[ind + 1] = "Others"  # last label created
+
+    plt.pie(xval, labels=label, autopct='%1.2f%%')
+    plt.title('Percent of %d COVID-19 cases in %s' % (get_last_stat(DataConfirmed, name), name))
+    # plt.legend(loc='best')
+    if save_option == 1:
+        name = name.replace("*", "")  # added because some names has * in their name
+        name = name.replace(",", "")  # added because some names has , in their name
+        name = name.replace(" ", "_")  # added because some names has space in their name
+
+        filename = name + '.png'
+        plt.savefig("./pie_chart/" + filename)  # FIle saving
     plt.close()  # Had to use this in iPython. Number of graphs in memory exploded. Will search for some better method.
     return 0
 
@@ -139,14 +209,13 @@ print('Time taken for processing world data %0.3f seconds.' % (end_time - start_
 CaseThreshold = 100  # Select countries if this number of cases occurred on last date of data
 CountryList = DataConfirmed[DataConfirmed[LastDate] > CaseThreshold]['Country/Region'].value_counts().index
 print('\nNumber of countries with more than %d cases is %d. \n' % (CaseThreshold, len(CountryList)))
-# CountryList = ["Canada", "US"]  # Adding individual countries of interest
+# CountryList = ["Canada"]  # Adding individual countries of interest
 # CountryList = DataConfirmed['Country/Region'].value_counts().index  # Calculates full country list
 
 start_time = timer()
 for Country in CountryList:
     start_time_ind = timer()
-    CountryConfirmed, CountryDeaths, CountryRecovered = get_country_data(DataConfirmed, DataDeaths, DataRecovered,
-                                                                         Country, IndexDate)
+    CountryConfirmed, CountryDeaths, CountryRecovered = get_country_data(DataConfirmed, DataDeaths, DataRecovered, Country, IndexDate)
     FileName = Country
     write_data_csv(CountryConfirmed, CountryDeaths, CountryRecovered, FileName)
     if FlagFigCountry == 1:
@@ -163,18 +232,25 @@ for Country in CountryList:
     start_time_ind = timer()
     ProvinceList = DataConfirmed[DataConfirmed['Country/Region'] == Country]['Province/State']
     ProvinceList = ProvinceList.dropna()
+    PieLabels = ProvinceList.to_numpy()
+    PieX = []
     for Province in ProvinceList:
-        ProvinceConfirmed, ProvinceDeaths, ProvinceRecovered = get_province_data(DataConfirmed, DataDeaths,
-                                                                                 DataRecovered, Province, IndexDate)
+        ProvinceConfirmed, ProvinceDeaths, ProvinceRecovered = get_province_data(DataConfirmed, DataDeaths, DataRecovered, Province, IndexDate)
+        PieX.append(ProvinceConfirmed[-1])
         FileName = Country + '_' + Province
         write_data_csv(ProvinceConfirmed, ProvinceDeaths, ProvinceRecovered, FileName)
         if FlagFigProvince == 1:
             plot_fig(ProvinceConfirmed, ProvinceDeaths, ProvinceRecovered, FileName, 1)
-
         end_time_ind = timer()
+        # Print output
         print("Province:%s, Confirmed:%d, Deaths:%d, Recovered:%d, Processing time:%0.3f s. "
               % (FileName, ProvinceConfirmed[-1], ProvinceDeaths[-1], ProvinceRecovered[-1],
                  (end_time_ind - start_time_ind)))
+    # Plot Pie charts now
+    if FlagPlotPie == 1:
+        if PieX:
+            # plot_pie_chart(xdata, labels, country_name, percent_threshold, save_fig)
+            plot_pie_chart(PieX, PieLabels, Country, 2, 1)
 
 end_time = timer()
 # ============================================
