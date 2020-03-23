@@ -8,16 +8,18 @@ from timeit import default_timer as timer
 if not os.path.exists('./plots'):
     os.makedirs('./plots')
 
-# import csv
-# import urllib3
-# import requests
-
-
 # url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series" \
 #       "/time_series_19-covid-Confirmed.csv "
 
 plt.close('all')
 Dpi = 150  # Pixel count for figures
+FlagFigCountry = 1
+FlagFigProvince = 1
+FlagFigWorld = 1
+FlagFig = 0
+if FlagFig == 0:
+    FlagFigWorld = FlagFigCountry = FlagFigProvince = 0
+
 # FigNum = 0  # Redundant. A counter for Figure number. Add FigNum+=1 at the start of each figure.
 
 # File readout here
@@ -43,7 +45,7 @@ IndexProvince = DataConfirmed.columns.get_loc('Province/State')  # Index of Prov
 IndexDate = IndexLong + 1  # Date of 22 Jan 2020, This index can be change to reset the starting date in plots
 LastDate = DataConfirmed.columns[-1]
 
-
+# Some functions defined here that will be used in future
 # Visualization
 
 def plot_fig_country(data1, data2, data3, country, savefig):
@@ -114,7 +116,11 @@ def get_province_data(data1, data2, data3, province_name, start_date_index):
 start_time = timer()
 # Use functions defined above and get world data
 WorldConfirmed, WorldDeaths, WorldRecovered = get_world_data(DataConfirmed, DataDeaths, DataRecovered, IndexDate)
-# plot_fig(WorldConfirmed, WorldDeaths, WorldRecovered, 'World', 1)  # Plot world data
+
+# Visualization
+if FlagFigWorld == 1:
+    plot_fig_country(WorldConfirmed, WorldDeaths, WorldRecovered, 'World', 1)  # Plot world data
+
 end_time = timer()
 print('Time taken for processing world data %0.3f seconds.' % (end_time - start_time))
 
@@ -126,12 +132,13 @@ print('\nNumber of countries with more than %d cases is %d. \n' % (CaseThreshold
 # CountryList = DataConfirmed['Country/Region'].value_counts().index  # Calculates full country list
 
 start_time = timer()
-
 for Country in CountryList:
     start_time_ind = timer()
     CountryConfirmed, CountryDeaths, CountryRecovered = get_country_data(DataConfirmed, DataDeaths, DataRecovered,
                                                                          Country, IndexDate)
-    plot_fig_country(CountryConfirmed, CountryDeaths, CountryRecovered, Country, 1)
+    if FlagFigCountry == 1:
+        plot_fig_country(CountryConfirmed, CountryDeaths, CountryRecovered, Country, 1)
+
     end_time_ind = timer()
     print("Country:%s, Confirmed:%d, Deaths:%d, Recovered:%d, Processing time:%0.3f s. "
           % (Country, CountryConfirmed[-1], CountryDeaths[-1], CountryRecovered[-1], (end_time_ind - start_time_ind)))
@@ -144,7 +151,9 @@ for Country in CountryList:
     for Province in ProvinceList:
         ProvinceConfirmed, ProvinceDeaths, ProvinceRecovered = get_province_data(DataConfirmed, DataDeaths,
                                                                                  DataRecovered, Province, IndexDate)
-        plot_fig_province(ProvinceConfirmed, ProvinceDeaths, ProvinceRecovered, Country, Province, 1)
+        if FlagFigProvince == 1:
+            plot_fig_province(ProvinceConfirmed, ProvinceDeaths, ProvinceRecovered, Country, Province, 1)
+
         end_time_ind = timer()
         print("Province:%s, Confirmed:%d, Deaths:%d, Recovered:%d, Processing time:%0.3f s. "
               % (Province, ProvinceConfirmed[-1], ProvinceDeaths[-1], ProvinceRecovered[-1],
