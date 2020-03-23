@@ -16,7 +16,7 @@ Dpi = 150  # Pixel count for figures
 FlagFigCountry = 1
 FlagFigProvince = 1
 FlagFigWorld = 1
-FlagFig = 0
+FlagFig = 1
 if FlagFig == 0:
     FlagFigWorld = FlagFigCountry = FlagFigProvince = 0
 
@@ -44,6 +44,7 @@ IndexCountry = DataConfirmed.columns.get_loc('Country/Region')  # Index of Count
 IndexProvince = DataConfirmed.columns.get_loc('Province/State')  # Index of Province/State in Column header
 IndexDate = IndexLong + 1  # Date of 22 Jan 2020, This index can be change to reset the starting date in plots
 LastDate = DataConfirmed.columns[-1]
+
 
 # Some functions defined here that will be used in future
 # Visualization
@@ -125,7 +126,7 @@ end_time = timer()
 print('Time taken for processing world data %0.3f seconds.' % (end_time - start_time))
 
 # Analyze individual countries
-CaseThreshold = 500
+CaseThreshold = 100
 CountryList = DataConfirmed[DataConfirmed[LastDate] > CaseThreshold]['Country/Region'].value_counts().index
 print('\nNumber of countries with more than %d cases is %d. \n' % (CaseThreshold, len(CountryList)))
 # CountryList = ["Canada", "US"]  # Adding individual countries of interest
