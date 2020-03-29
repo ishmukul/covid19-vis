@@ -47,15 +47,18 @@ if not os.path.exists('./pie_chart'):
 # Reading time series data. Data is in three separate files for confirmed cases, Cases that resulted in Deaths,
 # and cases that recovered
 # Confirmed cases
-FilePath_Confirmed = './data/time_series_19-covid-Confirmed.csv'
+# FilePath_Confirmed = './data/time_series_19-covid-Confirmed.csv'
+FilePath_Confirmed = './data/time_series_covid19_confirmed_global.csv'
 DataConfirmed = pd.read_csv(FilePath_Confirmed)
 
 # Death cases
-FilePath_Deaths = './data/time_series_19-covid-Deaths.csv'
+# FilePath_Deaths = './data/time_series_19-covid-Deaths.csv'
+FilePath_Deaths = './data/time_series_covid19_deaths_global.csv'
 DataDeaths = pd.read_csv(FilePath_Deaths)
 
 # Recovered cases
-FilePath_Recovered = './data/time_series_19-covid-Recovered.csv'
+# FilePath_Recovered = './data/time_series_19-covid-Recovered.csv'
+FilePath_Recovered = './data/time_series_covid19_recovered_global.csv'
 DataRecovered = pd.read_csv(FilePath_Recovered)
 
 # Diagnostic checks. Uncomment if required.
