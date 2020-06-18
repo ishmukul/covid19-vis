@@ -18,4 +18,6 @@ covid19.py : Main python script for processing data.
 data: Folder with data from CSSE account.  
 csv_out: Folder with output csv files. Filename are Country_Province.csv  
 plots: generated plots from this script. Filename are Country_Province.csv  
-pie_chart: generated pie charts for countries with province/state data. Filename are Country.png
+pie_chart: generated pie charts for countries with province/state data. Filename are Country_Name.png, e.g. [Canada.png](https://github.com/ishmukul/covid19-vis/blob/master/pie_chart/Canada.png)  
+
+<img src="https://github.com/ishmukul/covid19-vis/blob/master/pie_chart/Canada.png" alt="Cases in Canada" width="400"/>
