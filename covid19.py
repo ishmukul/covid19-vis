@@ -47,18 +47,18 @@ if not os.path.exists('./pie_chart'):
 # Reading time series data. Data is in three separate files for confirmed cases, Cases that resulted in Deaths,
 # and cases that recovered
 # Confirmed cases
-# FilePath_Confirmed = './data/time_series_19-covid-Confirmed.csv'
 FilePath_Confirmed = './data/time_series_covid19_confirmed_global.csv'
+# FilePath_Confirmed = '../../covid19_data/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'
 DataConfirmed = pd.read_csv(FilePath_Confirmed)
 
 # Death cases
-# FilePath_Deaths = './data/time_series_19-covid-Deaths.csv'
 FilePath_Deaths = './data/time_series_covid19_deaths_global.csv'
+# FilePath_Deaths = '../../covid19_data/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv'
 DataDeaths = pd.read_csv(FilePath_Deaths)
 
 # Recovered cases
-# FilePath_Recovered = './data/time_series_19-covid-Recovered.csv'
 FilePath_Recovered = './data/time_series_covid19_recovered_global.csv'
+# FilePath_Recovered = '../../covid19_data/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv'
 DataRecovered = pd.read_csv(FilePath_Recovered)
 
 # Diagnostic checks. Uncomment if required.
@@ -85,6 +85,14 @@ LastDate = DataConfirmed.columns[-1]
 # ============================================
 # Extracting world data by summing all indices.
 def get_world_data(data1, data2, data3, start_date_index):
+    """
+    Extracting world data by summing all indices.
+    param data1: Data series 1 - Confirmed cases
+    :param data2: Data series 1 - Death cases
+    :param data3: Data series 1 - Recovered cases
+    :param start_date_index: Index of start date in data. Changing it will shift axis to specific number of days.
+    :return: data_confirmed, data_deaths, data_recovered
+    """
     data_confirmed = data1.sum()[start_date_index:]
     data_deaths = data2.sum()[start_date_index:]
     data_recovered = data3.sum()[start_date_index:]
@@ -94,6 +102,15 @@ def get_world_data(data1, data2, data3, start_date_index):
 # ============================================
 # Extracting data for individual countries
 def get_country_data(data1, data2, data3, country_name, start_date_index):
+    """
+    Extracting data for each province, if available. e.g. US and Canada
+    :param data1: Data series 1 - Confirmed cases
+    :param data2: Data series 1 - Death cases
+    :param data3: Data series 1 - Recovered cases
+    :param country_name: Country name
+    :param start_date_index: Index of start date in data. Changing it will shift axis to specific number of days.
+    :return: data_confirmed, data_deaths, data_recovered
+    """
     data_confirmed = data1[data1['Country/Region'] == country_name].sum()[start_date_index:]
     data_deaths = data2[data2['Country/Region'] == country_name].sum()[start_date_index:]
     data_recovered = data3[data3['Country/Region'] == country_name].sum()[start_date_index:]
@@ -103,6 +120,15 @@ def get_country_data(data1, data2, data3, country_name, start_date_index):
 # ============================================
 # Extracting data for each province, if available. e.g. US and Canada
 def get_province_data(data1, data2, data3, province_name, start_date_index):
+    """
+    Extracting data for each province, if available. e.g. US and Canada
+    :param data1: Data series 1 - Confirmed cases
+    :param data2: Data series 1 - Death cases
+    :param data3: Data series 1 - Recovered cases
+    :param province_name: Province name
+    :param start_date_index: Index of start date in data. Changing it will shift axis to specific number of days.
+    :return: data_confirmed, data_deaths, data_recovered
+    """
     data_confirmed = data1[data1['Province/State'] == province_name].sum()[start_date_index:]
     data_deaths = data2[data2['Province/State'] == province_name].sum()[start_date_index:]
     data_recovered = data3[data3['Province/State'] == province_name].sum()[start_date_index:]
@@ -110,15 +136,27 @@ def get_province_data(data1, data2, data3, province_name, start_date_index):
 
 
 # ============================================
-# Extracting count from one dataseries
 def get_last_stat(data1, name):
+    """
+    Extracting count from one dataseries
+    :param data1: Dataframe
+    :param name: COuntry/Province name
+    :return: Last statistics
+    """
     return data1[data1['Country/Region'] == name].sum()[-1]
 
 
 # ============================================
-# Write data to csv files. One file will generated for each execution.
 # Format is: Rows=Cases; Columns=Date,Confirmed,Deaths,Recovered
 def write_data_csv(data1, data2, data3, name):
+    '''
+    Write data to csv files. One file will generated for each execution.
+    :param data1: Input data series 1
+    :param data2: Input data series 2
+    :param data3: Input data series 3
+    :param name: Country/Province name
+    :return:
+    '''
     a = pd.concat([data1, data2, data3], axis=1)
     a.index.name = 'Date'
     a.columns = ['Confirmed', 'Deaths', 'Recovered']
@@ -130,9 +168,17 @@ def write_data_csv(data1, data2, data3, name):
 
 
 # ============================================
-# Visualization: plotting all three cases in a single plot.
 # plot_fig(confirmed_data, death_data, Recovered_data, country/province_name, save_option)
 def plot_fig(data1, data2, data3, name, save_option):
+    """
+    Visualization: plotting all three cases in a single plot.
+    :param data1: May be Confirmed cases
+    :param data2: May be Death cases
+    :param data3: May be Recovered cases
+    :param name: Country/Province name
+    :param save_option: Option to save file on disk
+    :return: None
+    """
     plt.figure(figsize=plt.figaspect(0.8), dpi=Dpi)
     norm = 1
     # Let's calculate number of days from 22 Jan 2020 (First date in this dataset) = len(data1)
@@ -144,7 +190,7 @@ def plot_fig(data1, data2, data3, name, save_option):
     plt.xlabel('# of Days from %s' % DataConfirmed.columns[IndexDate])
     # plt.ylabel('# of Cases (in multiples of %dK)' % int(norm / 1000))
     plt.ylabel('# of Cases')
-    plt.title('# of COVID-19 cases in %s' % name)
+    plt.title('# of COVID-19 cases in %s on %s' % (name, LastDate))
     plt.legend(loc='best')
     if save_option == 1:
         name = name.replace("*", "")  # added because some names has * in their name
@@ -153,18 +199,28 @@ def plot_fig(data1, data2, data3, name, save_option):
 
         filename = name + '.png'
         plt.savefig("./plots/" + filename)  # FIle saving
+    plt.tight_layout()
     plt.close()  # Had to use this in iPython. Number of graphs in memory exploded. Will search for some better method.
     return 0
 
 
 # ============================================
 # Visualization: plotting Pie chart for a single country based on Provinces.
-# Following functions also filters data based on percentage threshold. In general, provinces with less cases are adding
-# to improper labelling. Values less than threshold are added to give a new label 'Others'.
-# We created a pandas dataframe from x_values and labels, sorted them and put a percentage threshold on data.
-# Final data is plotted as pie chart.
-# plot_pie_chart(cases, province_name, country_name, percentage_threshold, save_option)
-def plot_pie_chart(cases, label_name, name, pcon, save_option):
+#
+def plot_pie_chart(cases, label_name, name, thresh, save_option):
+    """
+    Following functions also filters data based on percentage threshold. In general, provinces with less cases are
+    adding to improper labelling. Values less than threshold are added to give a new label 'Others'. We created a
+    pandas dataframe from x_values and labels, sorted them and put a percentage threshold on data. Final data is
+    plotted as pie chart.  plot_pie_chart(cases, province_name, country_name, percentage_threshold, save_option)
+
+    :param cases: Number of cases.
+    :param label_name: Label name for conversion to series.
+    :param name: Country/Province name
+    :param thresh: Threshold for creating others slice in pie-chart
+    :param save_option: Option to save file on disk.
+    :return: None
+    """
 
     # Open a canvas with DotspPerInch Dpi.
     plt.figure(figsize=plt.figaspect(0.8), dpi=Dpi)
@@ -174,14 +230,14 @@ def plot_pie_chart(cases, label_name, name, pcon, save_option):
     piedata.columns = ['Case', 'Province']  # dataframe headers
     piedata = piedata.sort_values(by='Case', ascending=False).reset_index()  # Sorted data in descending order
     pie_pc = 100 * (piedata['Case'] / (piedata['Case'].sum()))  # Created percentage data
-    ind = pie_pc[pie_pc > pcon].index[-1]  # 5 percent condition
+    ind = pie_pc[pie_pc > thresh].index[-1]  # 5 percent condition
     xval = piedata['Case'][:ind + 1]  # x_values filtered for top high percentages
     xval[ind + 1] = piedata['Case'][ind + 1:].sum().sum()  # Sum of remaining values added
     label = piedata['Province'][:ind + 1]   # label value filtered
     label[ind + 1] = "Others"  # last label created
 
     plt.pie(xval, labels=label, autopct='%1.2f%%')
-    plt.title('Percent of %d COVID-19 cases in %s' % (get_last_stat(DataConfirmed, name), name))
+    plt.title('Percent of %d COVID-19 cases in %s on %s' % (get_last_stat(DataConfirmed, name), name, LastDate))
     # plt.legend(loc='best')
     if save_option == 1:
         name = name.replace("*", "")  # added because some names has * in their name

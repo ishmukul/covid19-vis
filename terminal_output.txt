@@ -1,0 +1,251 @@
+Time taken for processing world data 0.156 seconds.
+
+Number of countries with more than 100 cases is 165. 
+
+Country:China, Confirmed:84458, Deaths:4638, Recovered:79510, Processing time:0.138 s. 
+Country:Canada, Confirmed:101491, Deaths:8312, Recovered:63280, Processing time:0.133 s. 
+Country:Australia, Confirmed:7391, Deaths:102, Recovered:6877, Processing time:0.190 s. 
+Country:France, Confirmed:194805, Deaths:29578, Recovered:73791, Processing time:0.166 s. 
+Country:United Kingdom, Confirmed:300717, Deaths:42238, Recovered:1304, Processing time:0.160 s. 
+Country:Denmark, Confirmed:12494, Deaths:598, Recovered:11385, Processing time:0.155 s. 
+Country:Netherlands, Confirmed:49412, Deaths:6093, Recovered:186, Processing time:0.165 s. 
+Country:Sri Lanka, Confirmed:1924, Deaths:11, Recovered:1397, Processing time:0.142 s. 
+Country:Ethiopia, Confirmed:3759, Deaths:63, Recovered:849, Processing time:0.133 s. 
+Country:Kyrgyzstan, Confirmed:2657, Deaths:31, Recovered:1933, Processing time:0.131 s. 
+Country:Slovenia, Confirmed:1503, Deaths:109, Recovered:1359, Processing time:0.142 s. 
+Country:El Salvador, Confirmed:4066, Deaths:79, Recovered:2137, Processing time:0.138 s. 
+Country:Germany, Confirmed:188604, Deaths:8851, Recovered:173599, Processing time:0.148 s. 
+Country:Philippines, Confirmed:27238, Deaths:1108, Recovered:6820, Processing time:0.176 s. 
+Country:Chad, Confirmed:854, Deaths:74, Recovered:721, Processing time:0.125 s. 
+Country:Sweden, Confirmed:54562, Deaths:5041, Recovered:0, Processing time:0.123 s. 
+Country:Cameroon, Confirmed:9864, Deaths:276, Recovered:5570, Processing time:0.123 s. 
+Country:Finland, Confirmed:7117, Deaths:326, Recovered:6200, Processing time:0.130 s. 
+Country:Paraguay, Confirmed:1308, Deaths:13, Recovered:711, Processing time:0.127 s. 
+Country:Latvia, Confirmed:1104, Deaths:30, Recovered:875, Processing time:0.134 s. 
+Country:Burma, Confirmed:262, Deaths:6, Recovered:185, Processing time:0.138 s. 
+Country:Korea, South, Confirmed:12257, Deaths:280, Recovered:10800, Processing time:0.126 s. 
+Country:Serbia, Confirmed:12522, Deaths:257, Recovered:11697, Processing time:0.165 s. 
+Country:Chile, Confirmed:220628, Deaths:3615, Recovered:181931, Processing time:0.132 s. 
+Country:Cote d'Ivoire, Confirmed:6063, Deaths:48, Recovered:2749, Processing time:0.176 s. 
+Country:Armenia, Confirmed:18033, Deaths:302, Recovered:6814, Processing time:0.137 s. 
+Country:Bosnia and Herzegovina, Confirmed:3141, Deaths:168, Recovered:2197, Processing time:0.132 s. 
+Country:Moldova, Confirmed:12732, Deaths:433, Recovered:7077, Processing time:0.126 s. 
+Country:Eritrea, Confirmed:131, Deaths:0, Recovered:39, Processing time:0.137 s. 
+Country:Andorra, Confirmed:854, Deaths:52, Recovered:791, Processing time:0.133 s. 
+Country:Madagascar, Confirmed:1378, Deaths:12, Recovered:450, Processing time:0.142 s. 
+Country:Niger, Confirmed:1020, Deaths:67, Recovered:893, Processing time:0.124 s. 
+Country:Austria, Confirmed:17203, Deaths:687, Recovered:16099, Processing time:0.140 s. 
+Country:Italy, Confirmed:237828, Deaths:34448, Recovered:179455, Processing time:0.127 s. 
+Country:Morocco, Confirmed:8997, Deaths:213, Recovered:7993, Processing time:0.130 s. 
+Country:Rwanda, Confirmed:639, Deaths:2, Recovered:347, Processing time:0.172 s. 
+Country:Turkey, Confirmed:182727, Deaths:4861, Recovered:154640, Processing time:0.140 s. 
+Country:United Arab Emirates, Confirmed:43364, Deaths:295, Recovered:29537, Processing time:0.158 s. 
+Country:Slovakia, Confirmed:1561, Deaths:28, Recovered:1437, Processing time:0.150 s. 
+Country:Azerbaijan, Confirmed:10991, Deaths:133, Recovered:6075, Processing time:0.132 s. 
+Country:Somalia, Confirmed:2696, Deaths:88, Recovered:685, Processing time:0.133 s. 
+Country:Luxembourg, Confirmed:4085, Deaths:110, Recovered:3935, Processing time:0.141 s. 
+Country:Mexico, Confirmed:159793, Deaths:19080, Recovered:118504, Processing time:0.140 s. 
+Country:Spain, Confirmed:244683, Deaths:27136, Recovered:150376, Processing time:0.131 s. 
+Country:Cambodia, Confirmed:128, Deaths:0, Recovered:126, Processing time:0.143 s. 
+Country:Iraq, Confirmed:24254, Deaths:773, Recovered:10770, Processing time:0.138 s. 
+Country:Lithuania, Confirmed:1778, Deaths:76, Recovered:1447, Processing time:0.178 s. 
+Country:Guyana, Confirmed:171, Deaths:12, Recovered:102, Processing time:0.132 s. 
+Country:Japan, Confirmed:17530, Deaths:935, Recovered:15753, Processing time:0.158 s. 
+Country:Iceland, Confirmed:1815, Deaths:10, Recovered:1797, Processing time:0.138 s. 
+Country:Tanzania, Confirmed:509, Deaths:21, Recovered:183, Processing time:0.133 s. 
+Country:Cuba, Confirmed:2280, Deaths:84, Recovered:1999, Processing time:0.129 s. 
+Country:Eswatini, Confirmed:563, Deaths:4, Recovered:262, Processing time:0.147 s. 
+Country:Guinea, Confirmed:4668, Deaths:26, Recovered:3364, Processing time:0.136 s. 
+Country:Congo (Kinshasa), Confirmed:5100, Deaths:115, Recovered:640, Processing time:0.148 s. 
+Country:India, Confirmed:366946, Deaths:12237, Recovered:194325, Processing time:0.138 s. 
+Country:Taiwan*, Confirmed:445, Deaths:7, Recovered:434, Processing time:0.134 s. 
+Country:Peru, Confirmed:240908, Deaths:7257, Recovered:128622, Processing time:0.173 s. 
+Country:Mauritania, Confirmed:2223, Deaths:95, Recovered:427, Processing time:0.145 s. 
+Country:Angola, Confirmed:155, Deaths:7, Recovered:64, Processing time:0.155 s. 
+Country:San Marino, Confirmed:696, Deaths:42, Recovered:591, Processing time:0.156 s. 
+Country:Benin, Confirmed:572, Deaths:9, Recovered:237, Processing time:0.122 s. 
+Country:Guinea-Bissau, Confirmed:1492, Deaths:15, Recovered:153, Processing time:0.143 s. 
+Country:Cyprus, Confirmed:985, Deaths:18, Recovered:816, Processing time:0.134 s. 
+Country:Lebanon, Confirmed:1489, Deaths:32, Recovered:907, Processing time:0.154 s. 
+Country:Jamaica, Confirmed:626, Deaths:10, Recovered:451, Processing time:0.128 s. 
+Country:Mauritius, Confirmed:337, Deaths:10, Recovered:325, Processing time:0.145 s. 
+Country:South Sudan, Confirmed:1813, Deaths:31, Recovered:89, Processing time:0.135 s. 
+Country:US, Confirmed:2163290, Deaths:117717, Recovered:592191, Processing time:0.179 s. 
+Country:Ghana, Confirmed:12590, Deaths:66, Recovered:4410, Processing time:0.142 s. 
+Country:Guatemala, Confirmed:11251, Deaths:432, Recovered:2200, Processing time:0.127 s. 
+Country:Kosovo, Confirmed:1486, Deaths:33, Recovered:953, Processing time:0.139 s. 
+Country:Uganda, Confirmed:732, Deaths:0, Recovered:420, Processing time:0.167 s. 
+Country:Uzbekistan, Confirmed:5682, Deaths:19, Recovered:4131, Processing time:0.135 s. 
+Country:Mali, Confirmed:1890, Deaths:107, Recovered:1168, Processing time:0.132 s. 
+Country:Estonia, Confirmed:1977, Deaths:69, Recovered:1743, Processing time:0.137 s. 
+Country:Malawi, Confirmed:572, Deaths:6, Recovered:73, Processing time:0.137 s. 
+Country:Qatar, Confirmed:83174, Deaths:82, Recovered:62172, Processing time:0.128 s. 
+Country:Ukraine, Confirmed:33986, Deaths:953, Recovered:15485, Processing time:0.136 s. 
+Country:Belarus, Confirmed:56032, Deaths:324, Recovered:32735, Processing time:0.177 s. 
+Country:Burundi, Confirmed:104, Deaths:1, Recovered:75, Processing time:0.128 s. 
+Country:Belgium, Confirmed:60244, Deaths:9675, Recovered:16684, Processing time:0.130 s. 
+Country:Brazil, Confirmed:955377, Deaths:46510, Recovered:521046, Processing time:0.132 s. 
+Country:Tajikistan, Confirmed:5221, Deaths:51, Recovered:3700, Processing time:0.145 s. 
+Country:Israel, Confirmed:19783, Deaths:303, Recovered:15459, Processing time:0.172 s. 
+Country:Russia, Confirmed:552549, Deaths:7468, Recovered:303800, Processing time:0.138 s. 
+Country:Syria, Confirmed:178, Deaths:7, Recovered:78, Processing time:0.139 s. 
+Country:Kenya, Confirmed:4044, Deaths:107, Recovered:1353, Processing time:0.206 s. 
+Country:Iran, Confirmed:195051, Deaths:9185, Recovered:154812, Processing time:0.155 s. 
+Country:Egypt, Confirmed:49219, Deaths:1850, Recovered:13141, Processing time:0.127 s. 
+Country:Togo, Confirmed:544, Deaths:13, Recovered:353, Processing time:0.168 s. 
+Country:Romania, Confirmed:22760, Deaths:1451, Recovered:16117, Processing time:0.142 s. 
+Country:Norway, Confirmed:8692, Deaths:243, Recovered:8138, Processing time:0.138 s. 
+Country:Ecuador, Confirmed:48490, Deaths:4007, Recovered:23881, Processing time:0.137 s. 
+Country:West Bank and Gaza, Confirmed:555, Deaths:3, Recovered:415, Processing time:0.139 s. 
+Country:Pakistan, Confirmed:160118, Deaths:3093, Recovered:59215, Processing time:0.143 s. 
+Country:Zimbabwe, Confirmed:401, Deaths:4, Recovered:63, Processing time:0.133 s. 
+Country:Diamond Princess, Confirmed:712, Deaths:13, Recovered:651, Processing time:0.126 s. 
+Country:Cabo Verde, Confirmed:792, Deaths:7, Recovered:377, Processing time:0.135 s. 
+Country:Central African Republic, Confirmed:2564, Deaths:18, Recovered:402, Processing time:0.128 s. 
+Country:Nigeria, Confirmed:17735, Deaths:469, Recovered:5967, Processing time:0.133 s. 
+Country:Costa Rica, Confirmed:1871, Deaths:12, Recovered:899, Processing time:0.187 s. 
+Country:Argentina, Confirmed:35552, Deaths:913, Recovered:10512, Processing time:0.136 s. 
+Country:Dominican Republic, Confirmed:24105, Deaths:633, Recovered:14216, Processing time:0.140 s. 
+Country:Liberia, Confirmed:516, Deaths:33, Recovered:240, Processing time:0.133 s. 
+Country:Kuwait, Confirmed:37533, Deaths:306, Recovered:28896, Processing time:0.143 s. 
+Country:Gabon, Confirmed:4229, Deaths:30, Recovered:1505, Processing time:0.131 s. 
+Country:Malaysia, Confirmed:8515, Deaths:121, Recovered:7873, Processing time:0.124 s. 
+Country:Bangladesh, Confirmed:98489, Deaths:1305, Recovered:38189, Processing time:0.126 s. 
+Country:Sao Tome and Principe, Confirmed:683, Deaths:12, Recovered:188, Processing time:0.132 s. 
+Country:Bahamas, Confirmed:104, Deaths:11, Recovered:72, Processing time:0.138 s. 
+Country:Portugal, Confirmed:37672, Deaths:1523, Recovered:23580, Processing time:0.127 s. 
+Country:Saudi Arabia, Confirmed:141234, Deaths:1091, Recovered:91662, Processing time:0.188 s. 
+Country:Thailand, Confirmed:3135, Deaths:58, Recovered:2996, Processing time:0.162 s. 
+Country:Trinidad and Tobago, Confirmed:123, Deaths:8, Recovered:109, Processing time:0.140 s. 
+Country:Uruguay, Confirmed:849, Deaths:24, Recovered:810, Processing time:0.122 s. 
+Country:Suriname, Confirmed:261, Deaths:6, Recovered:48, Processing time:0.132 s. 
+Country:Venezuela, Confirmed:3386, Deaths:28, Recovered:835, Processing time:0.144 s. 
+Country:Yemen, Confirmed:902, Deaths:244, Recovered:271, Processing time:0.133 s. 
+Country:Bahrain, Confirmed:19961, Deaths:49, Recovered:14185, Processing time:0.138 s. 
+Country:Oman, Confirmed:26079, Deaths:116, Recovered:11797, Processing time:0.149 s. 
+Country:Switzerland, Confirmed:31187, Deaths:1956, Recovered:28900, Processing time:0.158 s. 
+Country:Jordan, Confirmed:987, Deaths:9, Recovered:693, Processing time:0.134 s. 
+Country:Burkina Faso, Confirmed:899, Deaths:53, Recovered:809, Processing time:0.176 s. 
+Country:Croatia, Confirmed:2258, Deaths:107, Recovered:2141, Processing time:0.139 s. 
+Country:North Macedonia, Confirmed:4482, Deaths:210, Recovered:1803, Processing time:0.155 s. 
+Country:Ireland, Confirmed:25341, Deaths:1710, Recovered:22698, Processing time:0.136 s. 
+Country:Mozambique, Confirmed:651, Deaths:4, Recovered:160, Processing time:0.129 s. 
+Country:Colombia, Confirmed:55083, Deaths:1887, Recovered:20400, Processing time:0.127 s. 
+Country:Equatorial Guinea, Confirmed:1664, Deaths:32, Recovered:515, Processing time:0.143 s. 
+Country:Singapore, Confirmed:41216, Deaths:26, Recovered:31938, Processing time:0.136 s. 
+Country:Bulgaria, Confirmed:3542, Deaths:184, Recovered:1880, Processing time:0.142 s. 
+Country:Kazakhstan, Confirmed:15877, Deaths:97, Recovered:9920, Processing time:0.146 s. 
+Country:Sierra Leone, Confirmed:1249, Deaths:51, Recovered:707, Processing time:0.141 s. 
+Country:Georgia, Confirmed:888, Deaths:14, Recovered:731, Processing time:0.198 s. 
+Country:Algeria, Confirmed:11268, Deaths:799, Recovered:7943, Processing time:0.157 s. 
+Country:Vietnam, Confirmed:335, Deaths:0, Recovered:325, Processing time:0.151 s. 
+Country:Mongolia, Confirmed:201, Deaths:0, Recovered:127, Processing time:0.135 s. 
+Country:Maldives, Confirmed:2120, Deaths:8, Recovered:1677, Processing time:0.210 s. 
+Country:Brunei, Confirmed:141, Deaths:3, Recovered:138, Processing time:0.131 s. 
+Country:Afghanistan, Confirmed:26874, Deaths:504, Recovered:6158, Processing time:0.130 s. 
+Country:Libya, Confirmed:500, Deaths:10, Recovered:78, Processing time:0.134 s. 
+Country:Montenegro, Confirmed:333, Deaths:9, Recovered:315, Processing time:0.129 s. 
+Country:Honduras, Confirmed:10299, Deaths:336, Recovered:1116, Processing time:0.131 s. 
+Country:Czechia, Confirmed:10162, Deaths:333, Recovered:7399, Processing time:0.123 s. 
+Country:New Zealand, Confirmed:1507, Deaths:22, Recovered:1482, Processing time:0.174 s. 
+Country:Bolivia, Confirmed:20685, Deaths:679, Recovered:4002, Processing time:0.121 s. 
+Country:Indonesia, Confirmed:41431, Deaths:2276, Recovered:16243, Processing time:0.119 s. 
+Country:Sudan, Confirmed:8020, Deaths:487, Recovered:2966, Processing time:0.128 s. 
+Country:Comoros, Confirmed:197, Deaths:3, Recovered:127, Processing time:0.133 s. 
+Country:Greece, Confirmed:3203, Deaths:187, Recovered:1374, Processing time:0.120 s. 
+Country:Hungary, Confirmed:4078, Deaths:567, Recovered:2547, Processing time:0.126 s. 
+Country:Nepal, Confirmed:7177, Deaths:20, Recovered:1167, Processing time:0.132 s. 
+Country:Zambia, Confirmed:1412, Deaths:11, Recovered:1142, Processing time:0.136 s. 
+Country:Malta, Confirmed:662, Deaths:9, Recovered:610, Processing time:0.128 s. 
+Country:Poland, Confirmed:30701, Deaths:1286, Recovered:14921, Processing time:0.136 s. 
+Country:South Africa, Confirmed:80412, Deaths:1674, Recovered:44331, Processing time:0.182 s. 
+Country:Nicaragua, Confirmed:1823, Deaths:64, Recovered:1238, Processing time:0.132 s. 
+Country:Congo (Brazzaville), Confirmed:883, Deaths:27, Recovered:391, Processing time:0.121 s. 
+Country:Senegal, Confirmed:5369, Deaths:73, Recovered:3606, Processing time:0.130 s. 
+Country:Haiti, Confirmed:4688, Deaths:82, Recovered:24, Processing time:0.123 s. 
+Country:Tunisia, Confirmed:1128, Deaths:50, Recovered:1004, Processing time:0.122 s. 
+Country:Panama, Confirmed:22597, Deaths:470, Recovered:13774, Processing time:0.119 s. 
+Country:Albania, Confirmed:1722, Deaths:38, Recovered:1077, Processing time:0.125 s. 
+Country:Djibouti, Confirmed:4545, Deaths:43, Recovered:3411, Processing time:0.117 s. 
+Province:China_Anhui, Confirmed:991, Deaths:6, Recovered:985, Processing time:0.121 s. 
+Province:China_Beijing, Confirmed:752, Deaths:9, Recovered:584, Processing time:0.249 s. 
+Province:China_Chongqing, Confirmed:582, Deaths:6, Recovered:573, Processing time:0.424 s. 
+Province:China_Fujian, Confirmed:362, Deaths:1, Recovered:356, Processing time:0.549 s. 
+Province:China_Gansu, Confirmed:150, Deaths:2, Recovered:137, Processing time:0.683 s. 
+Province:China_Guangdong, Confirmed:1628, Deaths:8, Recovered:1603, Processing time:0.822 s. 
+Province:China_Guangxi, Confirmed:254, Deaths:2, Recovered:252, Processing time:0.945 s. 
+Province:China_Guizhou, Confirmed:147, Deaths:2, Recovered:145, Processing time:1.079 s. 
+Province:China_Hainan, Confirmed:171, Deaths:6, Recovered:163, Processing time:1.230 s. 
+Province:China_Hebei, Confirmed:338, Deaths:6, Recovered:322, Processing time:1.352 s. 
+Province:China_Heilongjiang, Confirmed:947, Deaths:13, Recovered:934, Processing time:1.483 s. 
+Province:China_Henan, Confirmed:1276, Deaths:22, Recovered:1254, Processing time:1.606 s. 
+Province:China_Hong Kong, Confirmed:1120, Deaths:4, Recovered:1071, Processing time:1.728 s. 
+Province:China_Hubei, Confirmed:68135, Deaths:4512, Recovered:63623, Processing time:1.907 s. 
+Province:China_Hunan, Confirmed:1019, Deaths:4, Recovered:1015, Processing time:2.031 s. 
+Province:China_Inner Mongolia, Confirmed:238, Deaths:1, Recovered:234, Processing time:2.153 s. 
+Province:China_Jiangsu, Confirmed:653, Deaths:0, Recovered:653, Processing time:2.278 s. 
+Province:China_Jiangxi, Confirmed:932, Deaths:1, Recovered:931, Processing time:2.410 s. 
+Province:China_Jilin, Confirmed:155, Deaths:2, Recovered:153, Processing time:2.538 s. 
+Province:China_Liaoning, Confirmed:152, Deaths:2, Recovered:147, Processing time:2.660 s. 
+Province:China_Macau, Confirmed:45, Deaths:0, Recovered:45, Processing time:2.800 s. 
+Province:China_Ningxia, Confirmed:75, Deaths:0, Recovered:75, Processing time:2.930 s. 
+Province:China_Qinghai, Confirmed:18, Deaths:0, Recovered:18, Processing time:3.057 s. 
+Province:China_Shaanxi, Confirmed:314, Deaths:3, Recovered:306, Processing time:3.179 s. 
+Province:China_Shandong, Confirmed:792, Deaths:7, Recovered:783, Processing time:3.360 s. 
+Province:China_Shanghai, Confirmed:697, Deaths:7, Recovered:668, Processing time:3.486 s. 
+Province:China_Shanxi, Confirmed:198, Deaths:0, Recovered:198, Processing time:3.623 s. 
+Province:China_Sichuan, Confirmed:589, Deaths:3, Recovered:567, Processing time:3.756 s. 
+Province:China_Tianjin, Confirmed:197, Deaths:3, Recovered:191, Processing time:3.882 s. 
+Province:China_Tibet, Confirmed:1, Deaths:0, Recovered:1, Processing time:4.001 s. 
+Province:China_Xinjiang, Confirmed:76, Deaths:3, Recovered:73, Processing time:4.153 s. 
+Province:China_Yunnan, Confirmed:185, Deaths:2, Recovered:183, Processing time:4.276 s. 
+Province:China_Zhejiang, Confirmed:1269, Deaths:1, Recovered:1267, Processing time:4.401 s. 
+Province:Canada_Alberta, Confirmed:7530, Deaths:151, Recovered:0, Processing time:0.138 s. 
+Province:Canada_British Columbia, Confirmed:2775, Deaths:168, Recovered:0, Processing time:0.320 s. 
+Province:Canada_Grand Princess, Confirmed:13, Deaths:0, Recovered:0, Processing time:0.441 s. 
+Province:Canada_Manitoba, Confirmed:306, Deaths:7, Recovered:0, Processing time:0.565 s. 
+Province:Canada_New Brunswick, Confirmed:164, Deaths:2, Recovered:0, Processing time:0.686 s. 
+Province:Canada_Newfoundland and Labrador, Confirmed:261, Deaths:3, Recovered:0, Processing time:0.814 s. 
+Province:Canada_Nova Scotia, Confirmed:1061, Deaths:62, Recovered:0, Processing time:0.933 s. 
+Province:Canada_Ontario, Confirmed:34382, Deaths:2607, Recovered:0, Processing time:1.063 s. 
+Province:Canada_Prince Edward Island, Confirmed:27, Deaths:0, Recovered:0, Processing time:1.206 s. 
+Province:Canada_Quebec, Confirmed:54263, Deaths:5298, Recovered:0, Processing time:1.333 s. 
+Province:Canada_Saskatchewan, Confirmed:693, Deaths:13, Recovered:0, Processing time:1.459 s. 
+Province:Canada_Diamond Princess, Confirmed:0, Deaths:1, Recovered:0, Processing time:1.588 s. 
+Province:Canada_Northwest Territories, Confirmed:5, Deaths:0, Recovered:0, Processing time:1.780 s. 
+Province:Canada_Yukon, Confirmed:11, Deaths:0, Recovered:0, Processing time:1.907 s. 
+Province:Australia_Australian Capital Territory, Confirmed:108, Deaths:3, Recovered:105, Processing time:0.126 s. 
+Province:Australia_New South Wales, Confirmed:3137, Deaths:48, Recovered:2770, Processing time:0.256 s. 
+Province:Australia_Northern Territory, Confirmed:29, Deaths:0, Recovered:29, Processing time:0.381 s. 
+Province:Australia_Queensland, Confirmed:1066, Deaths:6, Recovered:1052, Processing time:0.523 s. 
+Province:Australia_South Australia, Confirmed:440, Deaths:4, Recovered:436, Processing time:0.644 s. 
+Province:Australia_Tasmania, Confirmed:228, Deaths:13, Recovered:215, Processing time:0.763 s. 
+Province:Australia_Victoria, Confirmed:1780, Deaths:19, Recovered:1678, Processing time:0.889 s. 
+Province:Australia_Western Australia, Confirmed:603, Deaths:9, Recovered:592, Processing time:1.021 s. 
+Province:France_French Guiana, Confirmed:1554, Deaths:5, Recovered:663, Processing time:0.124 s. 
+Province:France_French Polynesia, Confirmed:60, Deaths:0, Recovered:60, Processing time:0.264 s. 
+Province:France_Guadeloupe, Confirmed:171, Deaths:14, Recovered:157, Processing time:0.391 s. 
+Province:France_Mayotte, Confirmed:2345, Deaths:29, Recovered:2066, Processing time:0.521 s. 
+Province:France_New Caledonia, Confirmed:21, Deaths:0, Recovered:21, Processing time:0.646 s. 
+Province:France_Reunion, Confirmed:497, Deaths:1, Recovered:460, Processing time:0.778 s. 
+Province:France_Saint Barthelemy, Confirmed:6, Deaths:0, Recovered:6, Processing time:0.900 s. 
+Province:France_St Martin, Confirmed:42, Deaths:3, Recovered:36, Processing time:1.041 s. 
+Province:France_Martinique, Confirmed:202, Deaths:14, Recovered:98, Processing time:1.179 s. 
+Province:France_Saint Pierre and Miquelon, Confirmed:1, Deaths:0, Recovered:1, Processing time:1.300 s. 
+Province:United Kingdom_Bermuda, Confirmed:144, Deaths:9, Recovered:128, Processing time:0.143 s. 
+Province:United Kingdom_Cayman Islands, Confirmed:193, Deaths:1, Recovered:132, Processing time:0.275 s. 
+Province:United Kingdom_Channel Islands, Confirmed:570, Deaths:48, Recovered:512, Processing time:0.400 s. 
+Province:United Kingdom_Gibraltar, Confirmed:176, Deaths:0, Recovered:176, Processing time:0.542 s. 
+Province:United Kingdom_Isle of Man, Confirmed:336, Deaths:24, Recovered:312, Processing time:0.668 s. 
+Province:United Kingdom_Montserrat, Confirmed:11, Deaths:1, Recovered:10, Processing time:0.803 s. 
+Province:United Kingdom_Anguilla, Confirmed:3, Deaths:0, Recovered:3, Processing time:0.932 s. 
+Province:United Kingdom_British Virgin Islands, Confirmed:8, Deaths:1, Recovered:7, Processing time:1.064 s. 
+Province:United Kingdom_Turks and Caicos Islands, Confirmed:12, Deaths:1, Recovered:11, Processing time:1.196 s. 
+Province:United Kingdom_Falkland Islands (Malvinas), Confirmed:13, Deaths:0, Recovered:13, Processing time:1.321 s. 
+Province:Denmark_Faroe Islands, Confirmed:187, Deaths:0, Recovered:187, Processing time:0.129 s. 
+Province:Denmark_Greenland, Confirmed:13, Deaths:0, Recovered:13, Processing time:0.259 s. 
+Province:Netherlands_Aruba, Confirmed:101, Deaths:3, Recovered:98, Processing time:0.122 s. 
+Province:Netherlands_Curacao, Confirmed:23, Deaths:1, Recovered:19, Processing time:0.240 s. 
+Province:Netherlands_Sint Maarten, Confirmed:77, Deaths:15, Recovered:62, Processing time:0.374 s. 
+Province:Netherlands_Bonaire, Sint Eustatius and Saba, Confirmed:7, Deaths:0, Recovered:7, Processing time:0.496 s. 
+Total time taken for plotting is 34.985 seconds.
