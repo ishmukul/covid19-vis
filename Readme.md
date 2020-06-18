@@ -17,7 +17,11 @@ Readme.md : This Readme file.
 covid19.py : Main python script for processing data.  
 data: Folder with data from CSSE account.  
 csv_out: Folder with output csv files. Filename are Country_Province.csv  
-plots: generated plots from this script. Filename are Country_Province.csv  
+plots: generated plots from this script. Filename are Country_Province.csv, e.g. [Canada.png](https://github.com/ishmukul/covid19-vis/blob/master/plots/Canada.png)   
 pie_chart: generated pie charts for countries with province/state data. Filename are Country_Name.png, e.g. [Canada.png](https://github.com/ishmukul/covid19-vis/blob/master/pie_chart/Canada.png)  
 
+<img src="https://github.com/ishmukul/covid19-vis/blob/master/plots/Canada.png" alt="Cases in Canada" width="400"/>
 <img src="https://github.com/ishmukul/covid19-vis/blob/master/pie_chart/Canada.png" alt="Cases in Canada" width="400"/>
+
+## Update:  
+This script was written before data format change for US. Therefore, this script doe not update data for US.
